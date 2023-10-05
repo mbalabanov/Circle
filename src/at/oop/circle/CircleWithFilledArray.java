@@ -13,6 +13,16 @@ class CircleWithFilledArray {
     	this.filled[1] = filled[1];
 		this.filled[2] = filled[2];
     }
+    
+    // Clone-Konstruktor
+    public CircleWithFilledArray(CircleWithFilledArray other) {
+    	this.radius = other.radius;
+    	this.posX = other.posX;
+    	this.posY = other.posY;
+    	this.filled[0] = other.filled[0];
+    	this.filled[1] = other.filled[1];
+		this.filled[2] = other.filled[2];
+    }
 
     public static String compareCirclesWithFilledArray(CircleWithFilledArray firstCircleToCompare, CircleWithFilledArray secondCircleToCompare) {
     	

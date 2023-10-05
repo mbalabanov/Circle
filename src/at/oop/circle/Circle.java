@@ -11,6 +11,14 @@ class Circle {
     	posY = y;
     	this.filled = filled;
     }
+  
+    // Clone-Konstruktor
+    public Circle(Circle other) {
+    	this.radius = other.radius;
+    	this.posX = other.posX;
+    	this.posY = other.posY;
+    	this.filled = other.filled;
+    }
 
     public static String compareCircles(Circle firstCircleToCompare, Circle secondCircleToCompare) {
     	
@@ -33,11 +41,6 @@ class Circle {
 	    
 	    return response;
 
-    }
-    
-    public static Circle createCircleCopy(Circle circleToCopy) {
-    	Circle copiedCircle = new Circle(circleToCopy.radius, circleToCopy.posX, circleToCopy.posY, circleToCopy.filled);
-    	return copiedCircle;
     }
 
 }

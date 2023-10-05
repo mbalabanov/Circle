@@ -16,11 +16,11 @@ class TestCircle {
 		System.out.println("*** Vergleich zweier unabhaengig voneinander deklarierter Circle-Objekte mit UNTERSCHIEDLICHEN Properties:");
 		System.out.println(Circle.compareCircles(myCircleOneWithDifferentValues, myCircleTwoWithDifferentValues));
 
-		System.out.println("*** ACHTUNG: Vergleich eines Circle-Objekts mit sich selbst:");
+		System.out.println("*** ACHTUNG: Vergleich eines Circle-Objekts mit sich selbst (als Sanity Check:");
 		System.out.println(Circle.compareCircles(myCircleOneWithSameValues, myCircleOneWithSameValues));
 		
-		System.out.println("*** Vergleich eines Circle-Objekts mit einer Kopie:");
-		Circle myCircleThreeCopyOfTwo = Circle.createCircleCopy(myCircleTwoWithSameValues);
+		System.out.println("*** Vergleich eines Circle-Objekts mit einem Clone (ueber den Clone-Konstruktor):");
+		Circle myCircleThreeCopyOfTwo = new Circle(myCircleTwoWithSameValues);
 		System.out.println(Circle.compareCircles(myCircleTwoWithSameValues, myCircleThreeCopyOfTwo));
 		
 		CircleWithFilledArray myCircleFourthWithDifferentValues = new CircleWithFilledArray(6, 12, 12, new int[] {1, 2, 3} );
@@ -29,8 +29,8 @@ class TestCircle {
 		System.out.println("*** Vergleich zweier unabhaengig voneinander deklarierter CircleWithFilledArray-Objekte mit IDENTISCHEN Properties:");
 		System.out.println(CircleWithFilledArray.compareCirclesWithFilledArray(myCircleFourthWithDifferentValues, myCircleFifthWithDifferentValues));
 		
-		System.out.println("*** Vergleich eines CircleWithFilledArray-Objekts mit einer Kopie:");
-		CircleWithFilledArray myCircleSixCopyOfFive = CircleWithFilledArray.createFilledCircleCopy(myCircleFifthWithDifferentValues);
+		System.out.println("*** XXX Vergleich eines CircleWithFilledArray-Objekts mit einem Clone (ueber den Clone-Konstruktor):");
+		CircleWithFilledArray myCircleSixCopyOfFive = new CircleWithFilledArray(myCircleFifthWithDifferentValues);
 		System.out.println(CircleWithFilledArray.compareCirclesWithFilledArray(myCircleSixCopyOfFive, myCircleFifthWithDifferentValues));
 		
 	}
